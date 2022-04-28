@@ -729,12 +729,12 @@ The results of the first query are formatted to the problem description's specif
 The results of the second query are ascendingly ordered first by number of names corresponding to each profession (2 ≤ 2 ≤ 3 ≤ 3), and then alphabetically by profession (doctor ≤ singer, and actor ≤ professor ).
 
 ```sql
-SELECT CONCAT(NAME, '(', SUBSTR(Occupation,1,1), ')')
+SELECT CONCAT(NAME, '(', SUBSTR(OCCUPATION,1,1), ')')
 FROM OCCUPATIONS
 ORDER BY NAME;
 
-SELECT  CONCAT("There are a total of ", COUNT(Occupation), ' ', lower(Occupation), 's.')
+SELECT  CONCAT("There are a total of ", COUNT(OCCUPATION), ' ', LOWER(OCCUPATION), 's.')
 FROM OCCUPATIONS
-GROUP BY Occupation
-ORDER BY COUNT(Occupation) ASC, Occupation;
+GROUP BY OCCUPATION
+ORDER BY COUNT(OCCUPATION) ASC, OCCUPATION;
 ```
